@@ -8,17 +8,16 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class Report {
-	private int id;
+	
 	private String firstname;
 	private String lastname;
-	private Date Date;
-	@XmlAttribute(name="id")
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+//	@XmlAttribute(name="id")
+//	public int getId() {
+//		return id;
+//	}
+//	public void setId(int id) {
+//		this.id = id;
+//	}
 	@XmlElement(name="firstname")
 	public String getFirstname() {
 		return firstname;
@@ -33,16 +32,16 @@ public class Report {
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
-	@XmlElement(name="dob")
-	public Date getDate() {
-		return Date;
+	
+	public Report( String firstname, String lastname) {
+		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
 	}
-	public void setDate(Date date) {
-		Date = date;
-	}
+	
 	@Override
 	public String toString() {
-		return "Report [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", Date=" + Date + "]";
+		return "Report [ firstname=" + firstname + ", lastname=" + lastname +  "]";
 	}
 
 }
